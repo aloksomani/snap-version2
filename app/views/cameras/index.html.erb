@@ -1,0 +1,29 @@
+<% @cameras.each do |camera| %>
+
+      <!-- Start of card -->
+  <div class="ui page grid">
+    <div class="twelve wide column">
+      <div class="ui card">
+        <div class="image">
+          <%= image_tag(camera.product_photo, alt: "Placeholder camera") %>
+        </div>
+        <div class="content">
+          <div class="meta"><%= camera.brand %></div>
+          
+          <%= link_to("#{camera.brand} #{camera.model}", camera_path(camera))%>
+        </div>
+        <div class="extra content">
+          <div class="ui orange header">$<%= camera.price %></div>
+          <p>Free Shipping</p>
+        </div>
+      </div>
+    </div>
+    <div class="four wide column"></div>
+  </div>
+
+
+<br>
+<% end %>
+
+
+<br>
