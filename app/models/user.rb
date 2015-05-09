@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :reviews
+  has_many :samples
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
