@@ -5,3 +5,30 @@
 <%= @camera.resolution %><br>
 <%= @camera.zoom_range %><br>
 <%= @camera.description %><br>
+
+ <% @camera.reviews.each do |review| %>
+    <div>
+         <h3>Review #<%= @camera.reviews.index(review) + 1 %></h3>
+         <p><strong>Rating:</strong> <%= review.rating %></p>
+         <p><strong>The verdict:</strong> <%= review.description%></p>
+     </div>
+ <% end %>
+
+<h2>Add a new review!</h2>
+<%= form_for [@camera, @review] do |f| %> 
+   
+    <div>
+        <%= f.label :description, "Review", class: "form-label" %> 
+        <%= f.text_area :description, class: "text-area" %>
+    </div>
+
+    <div>
+        <%= f.label :rating, class: "form-label" %> 
+        <%= f.number_field :rating, class: "num-input" %>
+    </div>
+
+    <div>
+        <%= f.submit "Add your review!", class: "button" %>
+    </div>
+
+<% end %>
