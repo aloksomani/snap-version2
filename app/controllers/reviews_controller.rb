@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-	  def create
+	def create
     @camera = Camera.find(params[:id])
     @review = @camera.reviews.new(params.require(:review).permit(:description, :rating))
     @review.save

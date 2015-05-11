@@ -32,3 +32,32 @@
     </div>
 
 <% end %>
+
+ <% @camera.samples.each do |sample| %>
+    <div>
+         <h3>Photo Sample #<%= @camera.samples.index(sample) + 1 %></h3>
+         <p><strong>Photo:</strong> <%= image_tag sample.photo_url(:thumb) %></p>
+     </div>
+ <% end %>
+
+<h2>Add sample photos!</h2>
+<%= form_for [@camera, @sample], html: {multipart: true} do |f| %> 
+   
+    <div>
+        <%= f.label :photo, "Sample Photo", class: "form-label" %> 
+        <%= f.file_field :photo, class: "text-area" %>
+    </div>
+
+<!-- tried to add URL assignment, but not working
+    <div>
+	    <%#= f.label :remote_image_url, "or image URL" %><br />
+	    <%#= f.text_field :remote_image_url %>
+    </div> -->
+
+
+
+    <div>
+        <%= f.submit "Add your photo!", class: "button" %>
+    </div>
+
+<% end %>
