@@ -1,4 +1,5 @@
-<%= form_for :profile do |f| %>
+<%= form_tag("/cameras", method: "get") do %>
+<div>
   <%= label_tag "Landscape" %>
   <%= radio_button_tag :style, "Landscape" %>
   <%= label_tag "Portrait" %>
@@ -11,18 +12,18 @@
   <%= radio_button_tag :style, "Street" %>
   <%= label_tag "Travel" %>
   <%= radio_button_tag :style, "Travel" %>
-  <%= f.submit "save shooting style" %>
+</div>
+</div>
+  <%= label_tag "Canon" %>
+  <%= radio_button_tag :brand, "Canon" %>
+  <%= label_tag "Fuji" %>
+  <%= radio_button_tag :brand, "Fuji" %>
+</div>
+
+  <%= submit_tag "save shooting style" %>
 <% end %>
 
-<%= form_for :camera do |f| %>
-  <%= label_tag "24MP" %>
-  <%= radio_button_tag :res, "24MP" %>
-  <%= label_tag "20MP" %>
-  <%= radio_button_tag :res, "20MP" %>
-  <%= label_tag "16MP" %>
-  <%= radio_button_tag :res, "16MP" %>
-  <%= f.submit "save resolution" %>
-<% end %>
+
 
 <br>
 <br>
