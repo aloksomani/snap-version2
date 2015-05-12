@@ -5,3 +5,59 @@
 <%= @camera.resolution %><br>
 <%= @camera.zoom_range %><br>
 <%= @camera.description %><br>
+
+ <% @camera.reviews.each do |review| %>
+    <div>
+         <h3>Review #<%= @camera.reviews.index(review) + 1 %></h3>
+         <p><strong>Rating:</strong> <%= review.rating %></p>
+         <p><strong>The verdict:</strong> <%= review.description%></p>
+     </div>
+ <% end %>
+
+<h2>Add a new review!</h2>
+<%= form_for [@camera, @review] do |f| %> 
+   
+    <div>
+        <%= f.label :description, "Review", class: "form-label" %> 
+        <%= f.text_area :description, class: "text-area" %>
+    </div>
+
+    <div>
+        <%= f.label :rating, class: "form-label" %> 
+        <%= f.number_field :rating, class: "num-input" %>
+    </div>
+
+    <div>
+        <%= f.submit "Add your review!", class: "button" %>
+    </div>
+
+<% end %>
+
+ <% @camera.samples.each do |sample| %>
+    <div>
+         <h3>Photo Sample #<%= @camera.samples.index(sample) + 1 %></h3>
+         <p><strong>Photo:</strong> <%= image_tag sample.photo_url(:thumb) %></p>
+     </div>
+ <% end %>
+
+<h2>Add sample photos!</h2>
+<%= form_for [@camera, @sample], html: {multipart: true} do |f| %> 
+   
+    <div>
+        <%= f.label :photo, "Sample Photo", class: "form-label" %> 
+        <%= f.file_field :photo, class: "text-area" %>
+    </div>
+
+<!-- tried to add URL assignment, but not working
+    <div>
+	    <%#= f.label :remote_image_url, "or image URL" %><br />
+	    <%#= f.text_field :remote_image_url %>
+    </div> -->
+
+
+
+    <div>
+        <%= f.submit "Add your photo!", class: "button" %>
+    </div>
+
+<% end %>
