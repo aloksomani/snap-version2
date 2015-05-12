@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+
+  # root "home#index"
   
-  get "cameras/" => "cameras#index"
-  get "cameras/:id" => "cameras#show", as: :camera
+  namespace :api do 
+      resources :cameras, only: [:index, :show]
+    end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
