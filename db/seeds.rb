@@ -32,6 +32,7 @@ a6000 = Camera.new({
     price: "598.00",
     resolution: "24MP",
     zoom_range: "16-50mm",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/61m2uvNozqL._SL1200_.jpg",
     description: "Fast, cheap, compact mirrorless camera that works great for a variety of situations and is an excellent value. Great image quality and versatility."
   })
@@ -47,6 +48,7 @@ a7ii = Camera.new({
     price: "1799.00",
     resolution: "24MP",
     zoom_range: "28-70mm",
+    portability: 2,
     product_photo: "http://ecx.images-amazon.com/images/I/71G2PIzqK2L._SL1200_.jpg",
     description: "Large sensor, high quality camera with advanced image stabilization and excellent image quality."
   })
@@ -63,6 +65,7 @@ nx1 = Camera.new({
     price: "1499.99",
     resolution: "28MP",
     zoom_range: "16-50mm",
+    portability: 2,
     product_photo: "http://ecx.images-amazon.com/images/I/81GyVQkh-oL._SL1500_.jpg",
     description: "Exceptionally versatile camera that earns high marks for speed, image quality, low-light performance, and 4k video recording. One of the hottest cameras in its segment."
   })
@@ -80,6 +83,7 @@ nx300 = Camera.new({
     price: "569.00",
     resolution: "20MP",
     zoom_range: "18-55mm",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/61hk8YYJnPL._SL1000_.jpg",
     description: "Modern .profilesfeatures like a swiveling touch screen and wireless capabiility define this entry level camera."
   })
@@ -93,6 +97,7 @@ em5 = Camera.new({
     price: "1248.00",
     resolution: "16MP",
     zoom_range: "14-42mm",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/41KGJ%2BSFKLL.jpg",
     description: "An excellent introduction into the world of mirrorless. Great handling, image stabilization, quality, and selection of lenses. Known as a fun-to-shoot portable camera that makes the perfect travel mate. Does not have flash built-in."
   })
@@ -109,6 +114,7 @@ em10 = Camera.new({
     price: "499.00",
     resolution: "16MP",
     zoom_range: "14-42mm",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/91Q1YHBxOtL._SL1500_.jpg",
     description: "Fantastic entry level mirrorless camera. Great handling, image stabilization, quality, and selection of lenses. Compact and perfect for travel, not the best option for video or night shooting."
   })
@@ -122,6 +128,7 @@ xe2 = Camera.new({
     price: "999.00",
     resolution: "16MP",
     zoom_range: "18-55mm",
+    portability: 2,
     product_photo: "http://ecx.images-amazon.com/images/I/81fnd8%2B3yML._SL1500_.jpg",
     description: "Fuji offers high quality mirrorless cameras with high quality lenses, and this one comes in at a relative bargain for the package. It is one of the best still photograpy cameras at the price point, but has below average video capabilities."
   })
@@ -137,6 +144,7 @@ xt1 = Camera.new({
     price: "1499.95",
     resolution: "16MP",
     zoom_range: "18-55mm",
+    portability: 2,
     product_photo: "http://ecx.images-amazon.com/images/I/81UmRd5xoBL._SL1500_.jpg",
     description: "There's no better way to learn photography than with a camera that offers full manual control at your fingertips. Fuji's X-T1 is one of the highest rated mirrorless cameras of the year and boasts excellent image quality."
   })
@@ -154,6 +162,7 @@ gx7 = Camera.new({
     price: "797.99",
     resolution: "16MP",
     zoom_range: "14-42mm",
+    portability: 2,
     product_photo: "http://ecx.images-amazon.com/images/I/81fV%2BpbQ8TL._SL1500_.jpg",
     description: "A compact camera that delivers on both image and video quality. It is missing a few features compared to newer mirrorless models, but it still serves as an almost ideal companion for a street photographer."
   })
@@ -168,6 +177,7 @@ j5 = Camera.new({
     price: "496.95",
     resolution: "20MP",
     zoom_range: "10-30mm",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/91faFTktxgL._SL1500_.jpg",
     description: "The Nikon J5 makes up for its smaller sensor with incrediblly fast autofocus and shooting. Its portability and speed makes it ideal for home shooter or as an easy travel camera."
   })
@@ -180,6 +190,7 @@ lx100 = Camera.new({
     price: "779.99",
     resolution: "12.8MP",
     zoom_range: "3.1X",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/81mJaWTxvtL._SL1500_.jpg",
     description: "Really good photo and video quality, and a great set of features, manual controls, fast lens, great for shallow depth of field, good low-light shooting, not as portable."
   })
@@ -197,6 +208,7 @@ rx100 = Camera.new({
     price: "799.00",
     resolution: "20.9MP",
     zoom_range: "24-70mm",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/61DLUsi1h8L._SL1200_.jpg",
     description: "Great pop-up electronic viewfinder, excellent performance, great photo and video quality, fast lens, good low-light shooting, lots of tools for shooting video."
   })
@@ -214,6 +226,7 @@ g7x = Camera.new({
     price: "649.00",
     resolution: "20.2MP",
     zoom_range: "4.2X",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/810GiAMVEWL._SL1500_.jpg",
     description: "Excellent photo quality, shoots a bit slow, long lens that is great for portraiture, multi-angle LCD that is selfie-friendly. Built in wifi and NFC."
   })
@@ -229,6 +242,7 @@ stylus = Camera.new({
     price: "599.00",
     resolution: "12MP",
     zoom_range: "10.7X",
+    portability: 2,
     product_photo: "http://ecx.images-amazon.com/images/I/91OVAUq1XDL._SL1500_.jpg",
     description: "Excellent zoom lens, fine photo quality, excellent shooting performance. It has a touch screen and lots of control."
   })
@@ -243,6 +257,7 @@ sx700 = Camera.new({
     price: "279.00",
     resolution: "16MP",
     zoom_range: "30X",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/71kFG%2BL4a2L._SL1500_.jpg",
     description: "Excellent zoom lens, fun shooting options, low-light photos could be better."
   })
@@ -256,6 +271,7 @@ sx600 = Camera.new({
     price: "249.00",
     resolution: "16MP",
     zoom_range: "18X",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/711HOSc%2BtiL._SL1500_.jpg",
     description: "Very good photo and video quality, good zoom range with optical image stabilization, very portable, lens is slow, low-light photo and video are not great."
   })
@@ -269,6 +285,7 @@ n100 = Camera.new({
     price: "349.00",
     resolution: "12MP",
     zoom_range: "5X",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/71KCX3cYnDL._SL1500_.jpg",
     description: "Fast lens, good low-light photos, tilt LCD touch panel, great shooting performance."
   })
@@ -283,6 +300,7 @@ galaxy2 = Camera.new({
     price: "359.00",
     resolution: "16MP",
     zoom_range: "21X",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/612KhxwYLkL._SL1200_.jpg",
     description: "Well connected camera which uses Wifi and NFC very well, big & beautiful touchscreen, photo quality is ok, long zoom lens."
   })
@@ -295,6 +313,7 @@ s9700 = Camera.new({
     price: "276.99",
     resolution: "16MP",
     zoom_range: "30X",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/81x9ceg0fUL._SL1500_.jpg",
     description: "Great zoom lens, good shooting performance, good photo and video quality, built-in GPS."
   })
@@ -307,6 +326,7 @@ wb350f = Camera.new({
     price: "199.00",
     resolution: "16MP",
     zoom_range: "21X",
+    portability: 3,
     product_photo: "http://ecx.images-amazon.com/images/I/411bYPHReSL.jpg",
     description: "Good zoom lens with optical image stabilization, wireless features make it easy to share photos, photo quality is ok."
   })
@@ -319,6 +339,7 @@ d5500 = Camera.new({
     price: "999.95",
     resolution: "24.2MP",
     zoom_range: "18-55mm",
+    portability: 1,
     product_photo: "http://ecx.images-amazon.com/images/I/91dUom9AFTL._SL1500_.jpg",
     description: "Fully articulated touchscreen, compact size, broad feature set, built in wifi and smartphone compatabilty."
   })
@@ -333,6 +354,7 @@ d5300 = Camera.new({
     price: "899.95",
     resolution: "24.2MP",
     zoom_range: "18-55mm",
+    portability: 1,
     product_photo: "http://ecx.images-amazon.com/images/I/8181BxrBzeL._SL1500_.jpg",
     description: "Excellent photo quality, great feature set, speedy performance"
   })
@@ -346,6 +368,7 @@ rebel_t5i = Camera.new({
     price: "799.00",
     resolution: "18MP",
     zoom_range: "18-55mm",
+    portability: 1,
     product_photo: "http://ecx.images-amazon.com/images/I/81vDPWCAZ1L._SL1500_.jpg",
     description: "Great articulated touchscreen that's optimized for video, excellent photo quality,and solid video, limited feature set."
   })
@@ -361,6 +384,7 @@ d3300 = Camera.new({
     price: "496.00",
     resolution: "24MP",
     zoom_range: "18-55mm",
+    portability: 1,
     product_photo: "http://ecx.images-amazon.com/images/I/81aLEVAFXnL._SL1500_.jpg",
     description: "Very good photo quality, but a bit slow, feature set limited."
   })
@@ -373,6 +397,7 @@ rebel_sl1 = Camera.new({
     price: "499.00",
     resolution: "18MP",
     zoom_range: "18-55mm",
+    portability: 1,
     product_photo: "http://ecx.images-amazon.com/images/I/81cjAYUdknL._SL1500_.jpg",
     description: "Good photo and video quality, slim on features, small and light, good LCD with touchscreen, useful night modes."
   })
@@ -387,6 +412,7 @@ canon_7dii = Camera.new({
     price: "2049.00",
     resolution: "20MP",
     zoom_range: "18-135mm",
+    portability: 1,
     product_photo: "http://ecx.images-amazon.com/images/I/81Lg4CxvdtL._SL1500_.jpg",
     description: "Accurate, fast autofocus and solid handling makes this a great camera for general use. Also excels at 1080p video recording and allows you to use Canon's wide variety of lenses."
   })
@@ -401,6 +427,7 @@ d7100 = Camera.new({
     price: "1196.95",
     resolution: "24MP",
     zoom_range: "18-140mm",
+    portability: 1,
     product_photo: "http://static.bhphoto.com/images/images500x500/1005009.jpg",
     description: "One of the class-defining mid-range dSLRs on the market today. Offers excellent image quality, great dynamic range, and is very durable. Nikon's system of lenses also makes this a great long-term proposition."
   })
@@ -416,6 +443,7 @@ d610 = Camera.new({
     price: "1996.95",
     resolution: "24MP",
     zoom_range: "24-85mm",
+    portability: 1,
     product_photo: "http://ecx.images-amazon.com/images/I/91H7k72zkNL._SL1500_.jpg",
     description: "This is the entry point into the world of full-frame sensors in dSLR, and a solid option for aspiring landscape photographers. Heavy duty durability and the large sensor make this ideal for capturing rich details."
   })
@@ -431,6 +459,7 @@ canon_70d = Camera.new({
     price: "1249.00",
     resolution: "20MP",
     zoom_range: "18-135mm",
+    portability: 1,
     product_photo: "http://ecx.images-amazon.com/images/I/81a3i770zFL._SL1500_.jpg",
     description: "In close competition with Nikon's D7100, Canon's 70D is an excellent option for more video-oriented shooters with its Dual Pixel autofocus system."
   })
@@ -446,6 +475,7 @@ a77ii = Camera.new({
     price: "1498.00",
     resolution: "24MP",
     zoom_range: "16-50mm",
+    portability: 1,
     product_photo: "http://ecx.images-amazon.com/images/I/914J1Pyr2gL._SL1500_.jpg",
     description: "The Sony a77 II excels at high-speed autofocus and shooting, ideal for sports, action, and families. Includes built-in flash and gives you access to Sony's top-tier Zeiss lenses should you grow to require them."
   })
