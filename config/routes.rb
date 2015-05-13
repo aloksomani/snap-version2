@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   
   get "cameras/" => "cameras#index"
   get "cameras/:id" => "cameras#show", as: :camera
+
   post "cameras/:id/reviews" => "reviews#create", as: :camera_reviews
   post "cameras/:id/samples" => "samples#create", as: :camera_samples
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
