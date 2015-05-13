@@ -7,9 +7,12 @@ module API
       end
 
       def show
-          @camera = Camera.find(params[:id])
+        # render json: Camera.find(params[:id])
+
+        @camera = Camera.find(params[:id])
+        render json: @camera
       end
-      
+
     end
 end
 
