@@ -466,19 +466,8 @@ a77ii.save
 # review1.camera_id = Camera.first.id
 # review1.save
 
-# review2 = Review.new({
-#     rating: 10,
-#     description: "I had an XSi and a T5i. This is a big step up in the quality of workmanship. The live view focus is amazingly fast and accurate. Ultimately more accurate than the viewfinder. Makes live view shooting and video shooting a real joy. Dual dials make adjustments quick and easy. Ability to customize HDR, multiple exposures, etc. give great control. 7 fps are great. The only thing I'd like to see is giving the white balance its own button. Very happy to recommend this fine camera."
-#     })
-# review2.camera_id = Camera.first.id
-# review2.save
 
-# review3 = Review.new({
-#     rating: 10,
-#     description: "I had an XSi and a T5i. This is a big step up in the quality of workmanship. The live view focus is amazingly fast and accurate. Ultimately more accurate than the viewfinder. Makes live view shooting and video shooting a real joy. Dual dials make adjustments quick and easy. Ability to customize HDR, multiple exposures, etc. give great control. 7 fps are great. The only thing I'd like to see is giving the white balance its own button. Very happy to recommend this fine camera."
-#     })
-# review3.camera_id = Camera.first.id
-# review3.save
+#Seeding camera reviews by looping through cameras, and providing 3 separate reviews for each camera.
 
 1.upto(30) do |i|
     review = Review.new({
@@ -508,6 +497,35 @@ end
     camera = Camera.find_by id: "#{i}"
     review.camera_id = camera.id
     review.save
+end
+
+#Seeding sample photos by looping through cameras, and providing 3 separate sample photos for each camera.
+
+1.upto(30) do |i|
+    sample = Sample.new({
+        remote_photo_url: "http://powerreviews.s3.amazonaws.com/images_customers/09/45/55855283_500754_full.jpg"
+        })
+    camera = Camera.find_by id: "#{i}"
+    sample.camera_id = camera.id
+    sample.save
+end
+
+1.upto(30) do |i|
+    sample = Sample.new({
+        remote_photo_url: "http://powerreviews.s3.amazonaws.com/images_customers/08/59/55814308_500107_full.jpg"
+        })
+    camera = Camera.find_by id: "#{i}"
+    sample.camera_id = camera.id
+    sample.save
+end
+
+1.upto(30) do |i|
+    sample = Sample.new({
+        remote_photo_url: "http://powerreviews.s3.amazonaws.com/images_customers/08/17/55096007_489157_full.jpg"
+        })
+    camera = Camera.find_by id: "#{i}"
+    sample.camera_id = camera.id
+    sample.save
 end
 
 
