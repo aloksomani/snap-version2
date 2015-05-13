@@ -1,5 +1,4 @@
 class CamerasController < ApplicationController
-
   def index
       @cameras = Camera.all
   end
@@ -11,8 +10,13 @@ class CamerasController < ApplicationController
   end
   
 	def destroy
-		@review = Review.find(params[:id])
-		@review.destroy
+    @camera = Camera.find(params[:id])
+
+    @camera.reviews.destroy_all
+    @camera.destroy
+
+
+    redirect_to cameras_path
 
 	end
 
