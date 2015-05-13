@@ -11,6 +11,8 @@
          <h3>Review #<%= @camera.reviews.index(review) + 1 %></h3>
          <p><strong>Rating:</strong> <%= review.rating %></p>
          <p><strong>The verdict:</strong> <%= review.description%></p>
+         <%= link_to "Delete", camera_path(@camera), method: :delete, data: {confirm: "Really delete the review?"}%> 
+            <%= link_to "Edit", edit_camera_path(@camera) %>
      </div>
  <% end %>
 

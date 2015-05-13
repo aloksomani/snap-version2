@@ -5,4 +5,9 @@ class ReviewsController < ApplicationController
     @review.save
     redirect_to camera_path(@camera)
   end
+
+
+
+
+
 end
