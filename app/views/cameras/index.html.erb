@@ -1,27 +1,33 @@
-<%= form_tag("/cameras", method: "get") do %>
 <div>
-  <%= label_tag "Landscape" %>
-  <%= radio_button_tag :style, "Landscape" %>
-  <%= label_tag "Portrait" %>
-  <%= radio_button_tag :style, "Portrait" %>
-  <%= label_tag "Nighttime" %>
-  <%= radio_button_tag :style, "Nighttime" %>
-  <%= label_tag "Sports and Family" %>
-  <%= radio_button_tag :style, "Sports and Family" %>
-  <%= label_tag "Street" %>
-  <%= radio_button_tag :style, "Street" %>
-  <%= label_tag "Travel" %>
-  <%= radio_button_tag :style, "Travel" %>
-</div>
-</div>
-  <%= label_tag "Canon" %>
-  <%= radio_button_tag :brand, "Canon" %>
-  <%= label_tag "Fuji" %>
-  <%= radio_button_tag :brand, "Fuji" %>
-</div>
+  <%= form_tag("/cameras", method: "get") do %>
+    <div>
+      <h3>What type of shooting will you be doing most?</h3>
+      <%= collection_radio_buttons :profile, :style, Profile.all, :style, :style %>
+    </div>
 
-  <%= submit_tag "save shooting style" %>
-<% end %>
+    <div>
+      <h3>How important is the portability (size) of the camera?</h3>
+      <%= radio_button_tag :portability, 1 %>
+      <%= label_tag :portability_1, "Not Important" %>
+      <%= radio_button_tag :portability, 2 %>
+      <%= label_tag :portability_2, "Somewhat Important" %>
+      <%= radio_button_tag :portability, 3 %>
+      <%= label_tag :portability_3, "Very Important" %>
+    </div>
+
+    <div>
+      <h3>What is your price range?</h3>
+      <%= radio_button_tag :price, 600 %>
+      <%= label_tag :price_600, "$0 - 600" %>
+      <%= radio_button_tag :price, 1200 %>
+      <%= label_tag :price_1200, "$601 - 1200" %>
+      <%= radio_button_tag :price, 2100 %>
+      <%= label_tag :price_2100, "$1201 - 2100" %>
+    </div>
+
+      <%= submit_tag "Search Cameras" %>
+  <% end %>
+</div>
 
 
 
