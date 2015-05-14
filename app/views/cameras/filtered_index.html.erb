@@ -1,0 +1,61 @@
+<div>
+  <%= form_tag("/cameras", method: "get") do %>
+    <div>
+      <h3>What type of shooting will you be doing most?</h3>
+      <%= label_tag "Landscape" %>
+      <%= radio_button_tag :style, "Landscape" %>
+      <%= label_tag "Portrait" %>
+      <%= radio_button_tag :style, "Portrait" %>
+      <%= label_tag "Nighttime" %>
+      <%= radio_button_tag :style, "Nighttime" %>
+      <%= label_tag "Sports and Family" %>
+      <%= radio_button_tag :style, "Sports and Family" %>
+      <%= label_tag "Street" %>
+      <%= radio_button_tag :style, "Street" %>
+      <%= label_tag "Travel" %>
+      <%= radio_button_tag :style, "Travel" %>
+    </div>
+
+    <div>
+      <h3>How important is the portability (size) of the camera?</h3>
+      <%= label_tag "Not Important" %>
+      <%= radio_button_tag :portability, 1 %>
+      <%= label_tag "Somewhat Important" %>
+      <%= radio_button_tag :portability, 2 %>
+      <%= label_tag "Very Important" %>
+      <%= radio_button_tag :portability, 3 %>
+    </div>
+
+      <%= submit_tag "save shooting style" %>
+  <% end %>
+</div>
+
+<br>
+<br>
+
+
+<div class="ui page grid">
+
+<% @cameras.each do |camera| %>
+
+      <!-- Start of card -->
+    <div class="four wide column">
+      <div class="ui card">
+        <div class="image">
+          <%= image_tag(camera.product_photo, alt: "Placeholder camera") %>
+        </div>
+        <div class="content">
+          <div class="meta"><%= camera.brand %></div>
+          
+          <%= link_to("#{camera.brand} #{camera.model}", camera_path(camera))%>
+        </div>
+        <div class="extra content">
+          <div class="ui orange header">$<%= camera.price %></div>
+          <p>Free Shipping</p>
+        </div>
+      </div>
+    </div>
+
+<% end %>
+
+</div>
