@@ -1,3 +1,4 @@
+
 <div>
   <%= form_tag("/cameras", method: "get") do %>
     <div>
@@ -28,38 +29,3 @@
       <%= submit_tag "Search Cameras" %>
   <% end %>
 </div>
-
-
-<br>
-<br>
-
-
-<div class="ui page grid">
-
-  <% @cameras.each do |camera| %>
-
-      <!-- Start of card -->
-    <div class="four wide column">
-      <div class="ui card">
-
-        <div class="image">
-          <%= image_tag(camera.product_photo, alt: "Placeholder camera") %>
-        </div>
-
-        <div class="content">
-          <div class="meta"><%= camera.brand %></div>
-          <%= link_to("#{camera.brand} #{camera.model}", camera_path(camera))%>
-        </div>
-
-        <div class="extra content">
-          <div class="ui orange header">$<%= camera.price %></div>
-          <p>Free Shipping</p>
-        </div>
-
-      </div>
-    </div>
-
-  <% end %>
-  
-</div>
-
