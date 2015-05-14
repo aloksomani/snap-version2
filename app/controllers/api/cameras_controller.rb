@@ -42,7 +42,7 @@ module API
          @reviews = @camera.reviews
          @samples = @camera.samples
 
-         render json: [@camera, @reviews, @samples]
+         render json: @camera
 
     end
     
