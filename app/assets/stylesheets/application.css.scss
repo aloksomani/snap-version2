@@ -18,3 +18,21 @@
  body {
     background-color: white;
  }
+
+ .show-container {
+        width: 1200px;
+        display: inline-block;
+ }
+
+ .show-image {
+        height: 50%;
+        width: 50%;
+        display: inline-block;
+        float: left;
+ }
+
+.show-content {
+    display: inline-block;
+    float: left;
+    word-wrap: normal;
+}
