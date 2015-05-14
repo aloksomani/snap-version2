@@ -1,18 +1,31 @@
 
-<section ng-init="cameraCtrl.getCameraIndex()">
+<section ng-init="cameraCtrl.getCameraIndex()" class="ui page grid">
   
-    <div ng-repeat="camera in cameraCtrl.jsonCameras">
+<!-- Start of card -->
 
-      {{camera.model}} <br>
-      {{camera.brand}} <br>
-      {{camera.price}} <br>
-      {{camera.description}} <br>
+  <div class="four wide column" ng-repeat="camera in cameraCtrl.jsonCameras">
 
-      {{10+10}}
+    <div class="ui card" >
 
-  </div>
-</section>
+                  <div class="image">
+                          <img src="{{camera.product_photo}}"> 
+                  </div>
 
+                <div class="content">
+                        <div class="meta">{{camera.brand}}</div>
+                        </strong><h3>{{camera.brand}} {{camera.model}}</h3></strong><br>
+                        {{camera.description}}
+                </div>
 
+                <div class="extra content">
+                        <div class="ui orange header">$ {{camera.price}}</div>
+                        <p>Free Shipping</p>
+                        <button>View Camera</button>
+                </div>
 
+        </div> <!-- end of ui card -->
+
+  </div> <!-- end of four wide column class -->
+
+</section> <!-- end of ui page grid -->
 

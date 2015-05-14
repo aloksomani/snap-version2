@@ -25,4 +25,21 @@ function CamerasController($http, $routeParams, $window){
       });
   }; //close getCameraIndex
 
+  self.showCamera = function(){
+    var url = "/api/cameras/" + self.params.id;
+
+    console.log(self.params);
+    console.log(url)
+
+    $http.get(url)
+          .success(function(data){
+                console.log("successfull show request")
+                self.currentCamera = data;
+          })
+          .error(function(data){
+              console.log("Error!")
+
+          })
+} //end of showCamera function
+
 }

@@ -8,7 +8,14 @@ function config($routeProvider){
             controller: "CamerasController",
             controllerAs: "cameraCtrl"
         })
+        .when('/cameras/:id', {
+            templateUrl: "show.html",
+            controller: "CamerasController",
+            controllerAs: "cameraCtrl"
+        })
         .otherwise({
             redirectTo: '/'
         });
+
+
 }
