@@ -4,7 +4,7 @@
 
      <div class="image">
              <img class="show-image" src="{{cameraCtrl.currentCamera.product_photo}}"> 
-    </div>
+     </div>
 
 
             <div class="content">
@@ -28,8 +28,18 @@
                 </div>
 
             </div>
+</section>
 
- 
+<section>
+    <div ng-repeat="sample in cameraCtrl.currentCamera.samples">
+        <div><img src="{{sample.thumb_url}}"></div>
+    </div>
+</section>
 
-
+<section>
+    <div ng-repeat="review in cameraCtrl.currentCamera.reviews">
+        <div>{{review.rating}}</div>
+        <div>{{review.description}}</div>
+        <div>{{review.reviewer}}</div>
+    </div>
 </section>

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   get 'home/index'
   root "home#index"
-  get '*path' => 'cameras#index'
 
   namespace :api do
 
@@ -12,5 +11,7 @@ Rails.application.routes.draw do
    end
    
   end
+
+  get '*path' => 'cameras#index'
 
 end
