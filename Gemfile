@@ -33,6 +33,8 @@ gem 'carrierwave'
 
 gem 'rmagick'
 
+gem 'active_model_serializers'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

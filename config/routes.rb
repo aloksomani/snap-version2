@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
-   
+  namespace :api do
+
    resources :cameras do
      resources :reviews
      resources :samples
    end
+   
+  end
 
 
 
