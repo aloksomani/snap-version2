@@ -17,7 +17,9 @@
 
 Profile.destroy_all
 Review.destroy_all
+Sample.destroy_all
 Camera.destroy_all
+
 
 
 
