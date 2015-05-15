@@ -1,1 +1,1 @@
-angular.module('snapApp',['templates','ngRoute']);
+angular.module('snapApp',['templates','ngRoute', 'angularFileUpload']);

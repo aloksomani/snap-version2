@@ -16,6 +16,6 @@
 //= require angular
 //= require angular-route
 //= require angular-rails-templates
-
+//= require angularjs-file-upload
 //= require semantic-ui
 //= require_tree .
