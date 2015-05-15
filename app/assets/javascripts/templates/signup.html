@@ -1,0 +1,17 @@
+<section>
+    
+    <form>
+        Name: <input type="text" ng-model="userCtrl.name"><br>
+        Email: <input type="text" ng-model="userCtrl.email"><br>
+        Password: <input type="password" ng-model="userCtrl.password"><br>
+        Password again: <input type="password" ng-model="userCtrl.password_confirmation"><br>
+        Street Address: <input type="text" ng-model="userCtrl.address_line_1"><br>
+        City: <input type="text" ng-model="userCtrl.city"><br>
+        State: <input type="text" ng-model="userCtrl.state"><br>
+        Zip code: <input type="text" ng-model="userCtrl.zipcode"><br>
+
+        <button ng-click="userCtrl.createUser()">Create account</button>
+
+    </form>
+
+</section>

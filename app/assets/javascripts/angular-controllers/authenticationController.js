@@ -9,6 +9,7 @@ angular
 
         self.email; //bound to form in view
         self.password; //bound to form in view
+        self.name = name;
         self.login = login;
         self.logout = logout;
         self.isAuthenticated = isAuthenticated();
@@ -16,6 +17,7 @@ angular
 
         function isAuthenticated(){
             return window.sessionStorage.access_token ? true : false;
+            
         }
 
 

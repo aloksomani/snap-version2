@@ -2,7 +2,7 @@ module API
 
   class CamerasController < ApplicationController
 
-    before_action :restrict_access, only: [:update,:create,:destroy]
+    before_action :restrict_access, only: []
 
     def index
 
@@ -63,11 +63,7 @@ module API
           redirect_to cameras_path
   	end
 
-    private
-          def restrict_access
-              token = User.find_by(token: params[:token])
-            render json: {error:"You need to be logged in to access this"}, status: 401 unless token
-            end 
+  
 
           
 

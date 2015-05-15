@@ -9,15 +9,26 @@
       <!-- end login form -->
 
       <!-- begin logout button -->
-
       <div ng-if="auth.isAuthenticated">
         <button ng-click="auth.logout()">Logout</button>
       </div>
       <!-- end logout button -->
+
+         <!-- begin logout button -->
+      <div ng-if="auth.isAuthenticated == false">
+        <button><a href="#/signup">Create Account!</a></button>
+      </div>
+      <!-- end logout button -->
+
+      <div> 
+          FANCYYYYY
+
+      </div>
       
   </div>
 
 <br>
+
 
 <section ng-init="cameraCtrl.getCameraIndex()" class="ui page grid">
   
@@ -33,7 +44,7 @@
 
                 <div class="content">
                         <div class="meta">{{camera.brand}}</div>
-                        </strong><h3><a href="#/cameras/{{camera.id}}">{{camera.brand}} {{camera.model}}</a></h3></strong><br>
+                        </strong><h3><a href="#/cameras/{{camera.id}}">{{camera.id}} {{camera.model}}</a></h3></strong><br>
                         {{camera.description}}
                 </div>
 
