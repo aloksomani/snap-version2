@@ -6,6 +6,8 @@ CamerasController.$inject = ['$http', '$routeParams', '$window'];
 function CamerasController($http, $routeParams, $window){
     var self = this;
 
+    var accessToken = window.sessionStorage.access_token;
+
     self.params = $routeParams
 
     self.test = "TEST WORKING"

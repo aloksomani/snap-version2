@@ -1,7 +1,8 @@
 module API
 
-
   class CamerasController < ApplicationController
+
+    before_action :restrict_access, only: [:update,:create,:destroy]
 
     def index
 
@@ -42,27 +43,35 @@ module API
 
 
     def show
-     @camera = Camera.find(params[:id])
-     @review = Review.new
-     @sample = Sample.new
+           @camera = Camera.find(params[:id])
+           @review = Review.new
+           @sample = Sample.new
 
-     @reviews = @camera.reviews
-     @samples = @camera.samples
+           @reviews = @camera.reviews
+           @samples = @camera.samples
 
-     render json: @camera
+           render json: @camera
     end
     
     
   	def destroy
-      @camera = Camera.find(params[:id])
+          @camera = Camera.find(params[:id])
 
-      @camera.reviews.destroy_all
-      @camera.destroy
+          @camera.reviews.destroy_all
+          @camera.destroy
 
-      redirect_to cameras_path
+          redirect_to cameras_path
   	end
 
-  end
+    private
+          def restrict_access
+              token = User.find_by(token: params[:token])
+            render json: {error:"You need to be logged in to access this"}, status: 401 unless token
+            end 
 
-end
+          
+
+  end #end of CamerasController class
+
+end # end of API module
 

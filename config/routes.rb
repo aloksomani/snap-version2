@@ -5,12 +5,14 @@ Rails.application.routes.draw do
 
   namespace :api do
 
-   resources :cameras do
-     resources :reviews
-     resources :samples
-   end
+         resources :cameras do
+              resources :reviews
+              resources :samples
+         end
    
-  end
+        post '/authenticate' => 'authentication#sign_in'
+
+  end #end of namespace
 
   get '*path' => 'cameras#index'
 
