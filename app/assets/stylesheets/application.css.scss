@@ -15,9 +15,6 @@
  */
  @import 'semantic-ui';
 
- body {
-    background-color: white;
- }
 
  .show-container {
         width: 1200px;
@@ -36,4 +33,8 @@
     float: left;
     word-wrap: normal;
     width: 80%;
+}
+
+.icon {
+    float: right;
 }
