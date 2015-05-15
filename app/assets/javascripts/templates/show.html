@@ -1,0 +1,45 @@
+
+
+<section class="show-container" ng-init="cameraCtrl.showCamera()">
+
+     <div class="image">
+             <img class="show-image" src="{{cameraCtrl.currentCamera.product_photo}}"> 
+     </div>
+
+
+            <div class="content">
+
+                
+
+                <h1>{{cameraCtrl.currentCamera.id}} {{cameraCtrl.currentCamera.model}}</h1>
+
+                <h3> $ {{cameraCtrl.currentCamera.price}}<br> </h3>
+
+                {{cameraCtrl.currentCamera.description}}
+
+
+                <div>
+                        Details:
+                        <ul>
+                            <li> Resolution: {{cameraCtrl.currentCamera.resolution}} </li>
+                            <li>Zoom Range: {{cameraCtrl.currentCamera.zoom_range}} </li>
+                        </ul>
+
+                </div>
+
+            </div>
+</section>
+
+<section>
+    <div ng-repeat="sample in cameraCtrl.currentCamera.samples">
+        <div><img src="{{sample.thumb_url}}"></div>
+    </div>
+</section>
+
+<section>
+    <div ng-repeat="review in cameraCtrl.currentCamera.reviews">
+        <div>{{review.rating}}</div>
+        <div>{{review.description}}</div>
+        <div>{{review.reviewer}}</div>
+    </div>
+</section>

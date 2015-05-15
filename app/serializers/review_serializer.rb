@@ -1,5 +1,5 @@
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :rating, :description, :reviewer
+  attributes :id, :rating, :description, :reviewer
 
   def reviewer
     object.user

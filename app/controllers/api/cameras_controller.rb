@@ -1,7 +1,13 @@
 module API
 
   class CamerasController < ApplicationController
+
+    before_action :restrict_access, only: []
+
     def index
+
+      ################################################################################
+      # Sets default values for queries unless a paramter comes in from a radio button
 
       profile = params[:profile] || nil
       portability = params[:portability] || 1
@@ -20,6 +26,8 @@ module API
         price_end = 2100
       end
 
+      ################################################################################
+      # Queries to filter cameras on index page
 
       if (profile == nil)
         @cameras = Camera.where("portability >= ?", portability).where(price: price_start..price_end)
@@ -33,30 +41,33 @@ module API
     end
 
 
+
     def show
+           @camera = Camera.find(params[:id])
+           @review = Review.new
+           @sample = Sample.new
 
-        @camera = Camera.find(params[:id])
-         @review = Review.new
-         @sample = Sample.new
+           @reviews = @camera.reviews
+           @samples = @camera.samples
 
-         @reviews = @camera.reviews
-         @samples = @camera.samples
-
-         render json: @camera
-
+           render json: @camera
     end
     
     
   	def destroy
-      @camera = Camera.find(params[:id])
+          @camera = Camera.find(params[:id])
 
-      @camera.reviews.destroy_all
-      @camera.destroy
+          @camera.reviews.destroy_all
+          @camera.destroy
 
-      redirect_to cameras_path
+          redirect_to cameras_path
   	end
 
-  end
+  
 
-end
+          
+
+  end #end of CamerasController class
+
+end # end of API module
 
