@@ -20,7 +20,7 @@ Review.destroy_all
 Sample.destroy_all
 Camera.destroy_all
 
-
+User.create(name:"Fancy Moua",email:"fancy@example.com", password:"fancyrocks", address_line_1:"123 example street", city:"Los Angeles", state:"CA",zipcode:"90232")
 
 
 landscape = Profile.create({style: 'Landscape'})
@@ -501,63 +501,63 @@ a77ii.save
 
 #Seeding camera reviews by looping through cameras, and providing 3 separate reviews for each camera.
 
-1.upto(30) do |i|
-    review = Review.new({
-        rating: 5,
-        description: "I had an XSi and a T5i. This is a big step up in the quality of workmanship. The live view focus is amazingly fast and accurate. Ultimately more accurate than the viewfinder. Makes live view shooting and video shooting a real joy. Dual dials make adjustments quick and easy. Ability to customize HDR, multiple exposures, etc. give great control. 7 fps are great. The only thing I'd like to see is giving the white balance its own button. Very happy to recommend this fine camera."
-        })
-    camera = Camera.find_by id: "#{i}"
-    review.camera_id = camera.id
-    review.save
-end
+# 1.upto(30) do |i|
+#     review = Review.new({
+#         rating: 5,
+#         description: "I had an XSi and a T5i. This is a big step up in the quality of workmanship. The live view focus is amazingly fast and accurate. Ultimately more accurate than the viewfinder. Makes live view shooting and video shooting a real joy. Dual dials make adjustments quick and easy. Ability to customize HDR, multiple exposures, etc. give great control. 7 fps are great. The only thing I'd like to see is giving the white balance its own button. Very happy to recommend this fine camera."
+#         })
+#     camera = Camera.find_by id: "#{i}"
+#     review.camera_id = camera.id
+#     review.save
+# end
 
-1.upto(30) do |i|
-    review = Review.new({
-        rating: 4,
-        description: "I bought this camera to replace my 6-year-old Nikon D60. This camera body is AWESOME !!! I'm loving the touch screen and the ease with which you can change the settings. Its also pretty fast and quiet and very light. Has video option as well. I'm using this inexpensive camera to take pictures of my friends, kids, travels. Its not a professional grade, but perfect for someone like me, using it to capture family memories. Absolutely worth the money!"
-        })
-    camera = Camera.find_by id: "#{i}"
-    review.camera_id = camera.id
-    review.save
-end
+# 1.upto(30) do |i|
+#     review = Review.new({
+#         rating: 4,
+#         description: "I bought this camera to replace my 6-year-old Nikon D60. This camera body is AWESOME !!! I'm loving the touch screen and the ease with which you can change the settings. Its also pretty fast and quiet and very light. Has video option as well. I'm using this inexpensive camera to take pictures of my friends, kids, travels. Its not a professional grade, but perfect for someone like me, using it to capture family memories. Absolutely worth the money!"
+#         })
+#     camera = Camera.find_by id: "#{i}"
+#     review.camera_id = camera.id
+#     review.save
+# end
 
-1.upto(30) do |i|
-    review = Review.new({
-        rating: 5,
-        description: "This is as good as it gets in terms of size and quality. The photos are amazing and it's only slightly larger than most pocket point and shoots. It has the full range of manual controls and does HD video. I used to like the G and S lines, which are still good, but this beats them. It's in the middle of their sizes but has a larger sensor. The G1X has an even bigger sensor, but is too bulky to carry around all the time, especially when traveling. This is now my go to camera."
-        })
-    camera = Camera.find_by id: "#{i}"
-    review.camera_id = camera.id
-    review.save
-end
+# 1.upto(30) do |i|
+#     review = Review.new({
+#         rating: 5,
+#         description: "This is as good as it gets in terms of size and quality. The photos are amazing and it's only slightly larger than most pocket point and shoots. It has the full range of manual controls and does HD video. I used to like the G and S lines, which are still good, but this beats them. It's in the middle of their sizes but has a larger sensor. The G1X has an even bigger sensor, but is too bulky to carry around all the time, especially when traveling. This is now my go to camera."
+#         })
+#     camera = Camera.find_by id: "#{i}"
+#     review.camera_id = camera.id
+#     review.save
+# end
 
-#Seeding sample photos by looping through cameras, and providing 3 separate sample photos for each camera.
+# #Seeding sample photos by looping through cameras, and providing 3 separate sample photos for each camera.
 
-1.upto(30) do |i|
-    sample = Sample.new({
-        remote_photo_url: "http://powerreviews.s3.amazonaws.com/images_customers/09/45/55855283_500754_full.jpg"
-        })
-    camera = Camera.find_by id: "#{i}"
-    sample.camera_id = camera.id
-    sample.save
-end
+# 1.upto(30) do |i|
+#     sample = Sample.new({
+#         remote_photo_url: "http://powerreviews.s3.amazonaws.com/images_customers/09/45/55855283_500754_full.jpg"
+#         })
+#     camera = Camera.find_by id: "#{i}"
+#     sample.camera_id = camera.id
+#     sample.save
+# end
 
-1.upto(30) do |i|
-    sample = Sample.new({
-        remote_photo_url: "http://powerreviews.s3.amazonaws.com/images_customers/08/59/55814308_500107_full.jpg"
-        })
-    camera = Camera.find_by id: "#{i}"
-    sample.camera_id = camera.id
-    sample.save
-end
+# 1.upto(30) do |i|
+#     sample = Sample.new({
+#         remote_photo_url: "http://powerreviews.s3.amazonaws.com/images_customers/08/59/55814308_500107_full.jpg"
+#         })
+#     camera = Camera.find_by id: "#{i}"
+#     sample.camera_id = camera.id
+#     sample.save
+# end
 
-1.upto(30) do |i|
-    sample = Sample.new({
-        remote_photo_url: "http://powerreviews.s3.amazonaws.com/images_customers/08/17/55096007_489157_full.jpg"
-        })
-    camera = Camera.find_by id: "#{i}"
-    sample.camera_id = camera.id
-    sample.save
-end
+# 1.upto(30) do |i|
+#     sample = Sample.new({
+#         remote_photo_url: "http://powerreviews.s3.amazonaws.com/images_customers/08/17/55096007_489157_full.jpg"
+#         })
+#     camera = Camera.find_by id: "#{i}"
+#     sample.camera_id = camera.id
+#     sample.save
+# end
 
 
