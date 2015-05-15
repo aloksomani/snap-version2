@@ -1,3 +1,28 @@
+  <div ng-controller="AuthenticationController as auth">
+
+      <!-- begin login form -->
+      <form class="login-form" ng-submit="auth.login()" ng-if="auth.isAuthenticated == false">
+          <input class="login-input" type="text" placeholder="email" ng-model="auth.email">
+          <input class="login-input" type="password" placeholder="password" ng-model="auth.password">
+          <input type="submit" value="Log in" class="btn btn-submit" >
+      </form>
+      <!-- end login form -->
+
+      <!-- begin logout button -->
+      <div ng-if="auth.isAuthenticated">
+        <button ng-click="auth.logout()">Logout</button>
+      </div>
+      <!-- end logout button -->
+
+         <!-- begin logout button -->
+      <div ng-if="auth.isAuthenticated == false">
+        <button><a href="#/signup">Create Account!</a></button>
+      </div>
+      <!-- end logout button -->
+      
+  </div>
+
+
 <form ng-submit="cameraCtrl.getCameraIndex()" ng-hide="cameraCtrl.jsonCameras" >
 <div class="ui page grid">
   <!-- Start profile filter -->
@@ -104,7 +129,7 @@ $('.ui.dropdown')
 
                 <div class="content">
                         <div class="meta">{{camera.brand}}</div>
-                        </strong><h3><a href="#/cameras/{{camera.id}}">{{camera.brand}} {{camera.model}}</a></h3></strong><br>
+                        </strong><h3><a href="#/cameras/{{camera.id}}">{{camera.id}} {{camera.model}}</a></h3></strong><br>
                         {{camera.description}}
                 </div>
 
@@ -119,4 +144,3 @@ $('.ui.dropdown')
   </div> <!-- end of four wide column class -->
 
 </section> <!-- end of ui page grid -->
-

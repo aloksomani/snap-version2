@@ -14,6 +14,16 @@ function config($routeProvider){
         .when('/cameras/:id', {
             templateUrl: "show.html"
         })
+        .when('/signup', {
+            templateUrl: "signup.html",
+            controller: "UsersController",
+            controllerAs: "userCtrl"
+        })
+        .when('/users/:id', {
+            templateUrl: "my_account.html",
+            controller: "UsersController",
+            controllerAs: "usersCtrl"
+        })
         .otherwise({
             redirectTo: '/'
         });
