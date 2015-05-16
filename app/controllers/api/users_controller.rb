@@ -2,7 +2,7 @@ module API
 
     class UsersController < ApplicationController
 
-        before_action :restrict_access, only: [:show,:update,:destroy]
+        before_action :restrict_access, only: [:update,:destroy]
 
         # skip_before_action  :verify_authenticity_token
 
