@@ -1,58 +1,57 @@
 <form ng-submit="cameraCtrl.getCameraIndex()" ng-hide="cameraCtrl.jsonCameras" >
-<div class="ui page grid">
+
+<div class="ui one column stackable page grid">
+  <div class="column">
+    <h1>Welcome to Snap.</h1>
+  </div>
+</div>
+
+<div class="ui message main">
+<div class="ui three column stackable page grid">
+
   <!-- Start profile filter -->
 
-  <div class="centered row">
-    <div class="right aligned eight wide column">
-      <h2>What type of shooting will you be doing most?</h2>
+    <div class="column">
+      <div class="ui horizontal segment">
+        <h2>What type of shooting will you be doing most?</h2>
+        <select name="style" class="ui selection fluid dropdown" id="style" ng-model="cameraCtrl.style">
+          <i class="camera icon"></i>
+          <div class="menu">
+            <option value="">Shooting Style...</option>
+            <option value="Landscape">Landscape</option>
+            <option value="Portrait">Portrait</option>
+            <option value="Nighttime">Nighttime</option>
+            <option value="Sports and Family">Sports and Family</option>
+            <option value="Street">Street</option>
+            <option value="Travel">Travel</option>
+          </div>
+        </select>
+      </div>
     </div>
 
-    <div class="left aligned four wide column">
-      <select name="style" class="ui selection fluid dropdown" id="style" ng-model="cameraCtrl.style">
-        <i class="camera icon"></i>
-        <div class="menu">
-          <option value="">Shooting Style...</option>
-          <option value="Landscape">Landscape</option>
-          <option value="Portrait">Portrait</option>
-          <option value="Nighttime">Nighttime</option>
-          <option value="Sports and Family">Sports and Family</option>
-          <option value="Street">Street</option>
-          <option value="Travel">Travel</option>
-        </div>
-      </select>
-    </div>
-
-  </div>
 
   <!-- Start portability filter -->
 
-  <div class="centered row equal">
-    <div class="right aligned eight wide column">
-      <h2>How important is the camera's portability to you?</h2>
+    <div class="column">
+      <div class="ui horizontal segment">
+        <h2>How important is the camera's portability?</h2>
+        <select name="portability" class="ui  selection fluid dropdown" id="portability" ng-model="cameraCtrl.portability">
+          <i class="leaf icon"></i>
+          <div class="menu">
+            <option value="">Portability...</option>
+            <option value=1>Not Important</option>
+            <option value=2>Somewhat Important</option>
+            <option value=3>Very Important</option>
+          </div>
+        </select>
+      </div>
     </div>
 
-    <div class="left aligned four wide column">
-      <select name="portability" class="ui  selection fluid dropdown" id="portability" ng-model="cameraCtrl.portability">
-        <i class="leaf icon"></i>
-        <div class="menu">
-          <option value="">Portability...</option>
-          <option value=1>Not Important</option>
-          <option value=2>Somewhat Important</option>
-          <option value=3>Very Important</option>
-        </div>
-      </select>
-    </div>
-
-  </div>
 
   <!-- Start price filter -->
 
-  <div class="centered row equal">
-    <div class="right aligned eight wide column">
+    <div class="bottom aligned column">
       <h2>What's your price range?</h2>
-    </div>
-
-    <div class="left aligned four wide column">
       <select name="price" class="ui  selection fluid dropdown" id="range" ng-model="cameraCtrl.price">
         <i class="dollar icon"></i>
         <div class="menu">
@@ -64,21 +63,23 @@
       </select>
     </div>
 
-  </div>
-
   <!-- End filters -->
 
 </div> <!-- End page grid for filter form-->
+
+
 <br>
 <br>
 <br>
 
 <!-- Form submit button -->
 <div class="ui one column stackable center aligned page grid">
-  <div class="column six wide">
-    <input type="submit" value="Get Cameras" class="positive fluid ui button"></button>
+  <div class="five wide column">
+    <input type="submit" value="Get Cameras" class="positive fluid big ui button"></button>
   </div>
 </div>
+
+</div> <!-- End of jumbotron-->
 
 </form> <!-- End of filter form -->
 
