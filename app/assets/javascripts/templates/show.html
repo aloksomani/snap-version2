@@ -20,8 +20,8 @@
     <div>
                         Details
       <ul>
-          <li> Resolution: {{cameraCtrl.currentCamera.resolution}} </li>
-          <li>Zoom Range: {{cameraCtrl.currentCamera.zoom_range}} </li>
+          <li><strong>Resolution: </strong>  {{cameraCtrl.currentCamera.resolution}} </li>
+          <li><strong>Zoom Range: </strong>  {{cameraCtrl.currentCamera.zoom_range}} </li>
       </ul>
 
     </div>
@@ -33,8 +33,10 @@
 
 
   <div class="ui eight column grid">
+      <p>Sample Photos</p>
       <div class="column" ng-repeat="sample in cameraCtrl.currentCamera.samples">
           <div ><img <img class="ui horizontal aligned rounded image"  src="{{sample.thumb_url}}"></div>
+          <div ng-click="cameraCtrl.deleteSample(sample)" class="mini negative ui button">Delete</div>
       </div>
   </div>
 
@@ -47,7 +49,7 @@
       
       <div>{{review.description}}</div>
       <div>{{review.reviewer}}</div>
-      <div ng-click="cameraCtrl.deleteReview(review)" class="negative ui button">Delete</div>
+      <div ng-click="cameraCtrl.deleteReview(review)" class="mini negative ui button">Delete</div>
   </div>
 
 
@@ -74,6 +76,7 @@
   <h2>Add sample photos!</h2>
   <form ng-submit="cameraCtrl.uploader.uploadAll()">
     <input type="file" name="pic" accept="image/*" nv-file-select="cameraCtrl.samplePic" uploader="cameraCtrl.uploader">
+    
     <h3>Or image URL</h3>
     <div class="ui form">
       <div class="field">
