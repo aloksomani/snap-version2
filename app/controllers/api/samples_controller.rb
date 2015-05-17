@@ -5,6 +5,7 @@ module API
 	    # @sample = @camera.samples.new(params.require(:sample).permit(:photo, :remote_photo_url))
 	    @sample = @camera.samples.new()
 	    @sample.photo = params[:file]
+	    @sample.remote_photo_url = params[:file]
 	    @sample.save
 	    render json: @sample
 	   

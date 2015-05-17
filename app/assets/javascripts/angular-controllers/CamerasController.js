@@ -3,6 +3,7 @@ angular.module('snapApp')
 
 CamerasController.$inject = ['$http', '$routeParams', '$window', 'FileUploader'];
 
+
 function CamerasController($http, $routeParams, $window, FileUploader){
     var self = this;
 
@@ -80,6 +81,7 @@ function CamerasController($http, $routeParams, $window, FileUploader){
       };
     $http.post(url, newSample)
     .success(function(data){
+      console.log("sample was added")
       console.log(data);
       self.currentCamera.samples.push(newSample)
     })
