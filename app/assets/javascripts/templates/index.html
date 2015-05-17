@@ -6,78 +6,77 @@
   </div>
 </div>
 
-<div class="ui message main">
-<div class="ui three column stackable page grid">
+<div class="ui message main"> <!-- Start of jumbotron -->
+  <div class="ui three column stackable page grid">
 
-  <!-- Start profile filter -->
+    <!-- Start profile filter -->
 
-    <div class="column">
-      <div class="ui horizontal segment">
-        <h2>What type of shooting will you be doing most?</h2>
-        <select name="style" class="ui selection fluid dropdown" id="style" ng-model="cameraCtrl.style">
-          <i class="camera icon"></i>
-          <div class="menu">
-            <option value="">Shooting Style...</option>
-            <option value="Landscape">Landscape</option>
-            <option value="Portrait">Portrait</option>
-            <option value="Nighttime">Nighttime</option>
-            <option value="Sports and Family">Sports and Family</option>
-            <option value="Street">Street</option>
-            <option value="Travel">Travel</option>
-          </div>
-        </select>
-      </div>
-    </div>
-
-
-  <!-- Start portability filter -->
-
-    <div class="column">
-      <div class="ui horizontal segment">
-        <h2>How important is the camera's portability?</h2>
-        <select name="portability" class="ui  selection fluid dropdown" id="portability" ng-model="cameraCtrl.portability">
-          <i class="leaf icon"></i>
-          <div class="menu">
-            <option value="">Portability...</option>
-            <option value=1>Not Important</option>
-            <option value=2>Somewhat Important</option>
-            <option value=3>Very Important</option>
-          </div>
-        </select>
-      </div>
-    </div>
-
-
-  <!-- Start price filter -->
-
-    <div class="bottom aligned column">
-      <h2>What's your price range?</h2>
-      <select name="price" class="ui  selection fluid dropdown" id="range" ng-model="cameraCtrl.price">
-        <i class="dollar icon"></i>
-        <div class="menu">
-          <option value="">Price Range...</option>
-          <option value=600 > $0 - 600 </option>
-          <option value=1200 > $600 - 1,200</option>
-          <option value=2100 > $1,200 - 2,100 </option>
+      <div class="column">
+        <div class="ui horizontal segment">
+          <h2>What type of shooting will you be doing most?</h2>
+          <select name="style" class="ui selection fluid dropdown" id="style" ng-model="cameraCtrl.style">
+            <i class="camera icon"></i>
+            <div class="menu">
+              <option value="">Shooting Style...</option>
+              <option value="Landscape">Landscape</option>
+              <option value="Portrait">Portrait</option>
+              <option value="Nighttime">Nighttime</option>
+              <option value="Sports and Family">Sports and Family</option>
+              <option value="Street">Street</option>
+              <option value="Travel">Travel</option>
+            </div>
+          </select>
         </div>
-      </select>
+      </div>
+
+
+    <!-- Start portability filter -->
+
+      <div class="column">
+        <div class="ui horizontal segment">
+          <h2>How important is the camera's portability?</h2>
+          <select name="portability" class="ui  selection fluid dropdown" id="portability" ng-model="cameraCtrl.portability">
+            <i class="leaf icon"></i>
+            <div class="menu">
+              <option value="">Portability...</option>
+              <option value=1>Not Important</option>
+              <option value=2>Somewhat Important</option>
+              <option value=3>Very Important</option>
+            </div>
+          </select>
+        </div>
+      </div>
+
+
+    <!-- Start price filter -->
+
+      <div class="bottom aligned column">
+        <h2>What's your price range?</h2>
+        <select name="price" class="ui  selection fluid dropdown" id="range" ng-model="cameraCtrl.price">
+          <i class="dollar icon"></i>
+          <div class="menu">
+            <option value="">Price Range...</option>
+            <option value=600 > $0 - 600 </option>
+            <option value=1200 > $600 - 1,200</option>
+            <option value=2100 > $1,200 - 2,100 </option>
+          </div>
+        </select>
+      </div>
+
+    <!-- End filters -->
+
+  </div> <!-- End page grid for filter form-->
+
+  <br>
+  <br>
+  <br>
+
+  <!-- Form submit button -->
+  <div class="ui one column stackable center aligned page grid">
+    <div class="five wide column">
+      <input type="submit" value="Get Cameras" class="positive fluid big ui button"></button>
     </div>
-
-  <!-- End filters -->
-
-</div> <!-- End page grid for filter form-->
-
-
-<br>
-<br>
-<br>
-
-<!-- Form submit button -->
-<div class="ui one column stackable center aligned page grid">
-  <div class="five wide column">
-    <input type="submit" value="Get Cameras" class="positive fluid big ui button"></button>
   </div>
-</div>
 
 </div> <!-- End of jumbotron-->
 
@@ -91,7 +90,7 @@ $('.ui.dropdown')
 
 
 
-<section class="ui page grid">
+<section class="ui stackable page grid">
   
 <!-- Start of card -->
 
@@ -99,9 +98,9 @@ $('.ui.dropdown')
 
     <div class="ui card" >
 
-                  <div class="image">
+                  <a href="#/cameras/{{camera.id}}" class="image">
                           <img src="{{camera.product_photo}}"> 
-                  </div>
+                  </a>
 
                 <div class="content">
                         <div class="meta">{{camera.brand}}</div>
@@ -111,9 +110,10 @@ $('.ui.dropdown')
 
                 <div class="extra content">
                         <div class="ui orange header">$ {{camera.price}}</div>
-                        <p>Free Shipping</p>
-                        <button>View Camera</button>
+                        <br>
+                        <a href="#/cameras/{{camera.id}}" class="mini ui fluid button">View Camera</a>
                 </div>
+
 
         </div> <!-- end of ui card -->
 
