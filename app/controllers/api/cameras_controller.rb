@@ -58,6 +58,7 @@ module API
           @camera = Camera.find(params[:id])
 
           @camera.reviews.destroy_all
+          @camera.samples.destroy_all
           @camera.destroy
 
           redirect_to cameras_path

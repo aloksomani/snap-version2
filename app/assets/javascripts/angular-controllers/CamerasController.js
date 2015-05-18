@@ -3,6 +3,7 @@ angular.module('snapApp')
 
 CamerasController.$inject = ['$http', '$routeParams', '$window', 'FileUploader'];
 
+
 function CamerasController($http, $routeParams, $window, FileUploader){
     var self = this;
 
@@ -73,14 +74,14 @@ function CamerasController($http, $routeParams, $window, FileUploader){
       };
     $http.post(url, newReview)
     .success(function(data){
-      console.log("Lets keep partying");
+      console.log("successfully added review");
       self.currentCamera.reviews.push(data);
       self.rating = null;
       self.description = null;
     })
     .error(function(data){
       console.log(newReview);
-      console.log("this sucks");
+      console.log("review was not created");
       console.log(data);
     })
   }
@@ -90,12 +91,12 @@ function CamerasController($http, $routeParams, $window, FileUploader){
    
     $http.delete(url)
     .success(function(data){
-      console.log("Lets keep partying");
+      console.log("Successfully deleted review");
       self.currentCamera.reviews.splice(self.currentCamera.reviews.indexOf(review),1);
     })
     .error(function(data){
       console.log(deleteReview);
-      console.log("this sucks");
+      console.log("review was not deleted");
       console.log(data);
     })
   }
@@ -105,25 +106,41 @@ function CamerasController($http, $routeParams, $window, FileUploader){
       console.log(response);
       self.currentCamera.samples.push(response);
       //figure out how to empty the file upload input
-      self.samplePic = null;
+      // self.currentCamera.samples= "";
     }
     
-   self.addPhoto = function(){
-    console.log("add photo called!");
+   self.addSample = function(){
+    console.log("add sample called!");
     // self.uploader = new FileUploader({url: "/api/cameras/"+ self.params.id +"/samples"});
     var url ="/api/cameras/"+ self.params.id +"/samples"
     var newSample= {
-        photo: self.photo
+        remote_photo_url: self.remote_photo_url
       };
     $http.post(url, newSample)
     .success(function(data){
+      console.log("sample was added")
       console.log(data);
       self.currentCamera.samples.push(newSample)
-
     })
     .error(function(data){
       console.log(newSample);
-      console.log("this sucks");
+      console.log("sample was not added");
+      console.log(data);
+    })
+  }
+
+
+     self.deleteSample = function(sample){
+    var url ="/api/cameras/"+ self.params.id +"/samples/" + sample.id;
+   
+    $http.delete(url)
+    .success(function(data){
+      console.log("sample was successfully deleted");
+      self.currentCamera.samples.splice(self.currentCamera.samples.indexOf(sample),1);
+    })
+    .error(function(data){
+      console.log(deleteSample);
+      console.log("sample was not deleted");
       console.log(data);
     })
   }
