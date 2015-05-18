@@ -33,6 +33,8 @@ angular
                 self.isAuthenticated = isAuthenticated();
                 self.email = null;
                 self.password = null;
+              $window.location.href = ("#/cameras")
+                
             })
             .error(function(data){
                 console.log(data);

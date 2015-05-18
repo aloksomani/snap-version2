@@ -14,6 +14,11 @@ function config($routeProvider){
         .when('/cameras/:id', {
             templateUrl: "show.html"
         })
+        .when('/login', {
+            templateUrl: "login.html",
+            controller: "UsersController",
+            controllerAs: "userCtrl"
+        })
         .when('/signup', {
             templateUrl: "signup.html",
             controller: "UsersController",
