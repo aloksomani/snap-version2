@@ -20,8 +20,8 @@
     <div>
                         Details
       <ul>
-          <li> Resolution: {{cameraCtrl.currentCamera.resolution}} </li>
-          <li>Zoom Range: {{cameraCtrl.currentCamera.zoom_range}} </li>
+          <li><strong>Resolution: </strong>  {{cameraCtrl.currentCamera.resolution}} </li>
+          <li><strong>Zoom Range: </strong>  {{cameraCtrl.currentCamera.zoom_range}} </li>
       </ul>
 
     </div>
@@ -31,10 +31,12 @@
 
 <section class="review-container">
 
-
-  <div class="ui eight column grid">
-      <div class="column" ng-repeat="sample in cameraCtrl.currentCamera.samples">
+<h3>Sample Photos</h3>
+  <div class=" ui grid">
+      
+      <div class="four wide column" ng-repeat="sample in cameraCtrl.currentCamera.samples">
           <div ><img <img class="ui horizontal aligned rounded image"  src="{{sample.thumb_url}}"></div>
+          <div ng-click="cameraCtrl.deleteSample(sample)" class="mini negative ui button">Delete</div>
       </div>
   </div>
 
@@ -47,14 +49,14 @@
       
       <div>{{review.description}}</div>
       <div>{{review.reviewer}}</div>
-      <div ng-click="cameraCtrl.deleteReview(review)" class="negative ui button">Delete</div>
+      <div ng-click="cameraCtrl.deleteReview(review)" class="mini negative ui button">Delete</div>
   </div>
 
 
   <h2>Add a new review!</h2>
 
-  <div class="ui form">
-    <div class="field">
+  <div class="ui input">
+    <div>
       <label>Rating</label>
       <input id="ratingField" ng-model="cameraCtrl.rating" type="text">
     </div>
@@ -64,7 +66,7 @@
   <div class="ui form">
     <div class="field">
       <label>Review</label>
-      <input ng-model="cameraCtrl.description" type="text">
+      <textarea ng-model="cameraCtrl.description" type="text"></textarea>
     </div>
   </div>
 
@@ -74,10 +76,11 @@
   <h2>Add sample photos!</h2>
   <form ng-submit="cameraCtrl.uploader.uploadAll()">
     <input type="file" name="pic" accept="image/*" nv-file-select="cameraCtrl.samplePic" uploader="cameraCtrl.uploader">
+    
     <h3>Or image URL</h3>
     <div class="ui form">
       <div class="field">
-        <input ng-model="cameraCtrl.photo" type="text">
+        <input ng-model="cameraCtrl.remote_photo_url" type="text">
       </div>
     </div>
     <input class="positive ui button" type="submit">
@@ -85,90 +88,5 @@
 
   
 
-  <!-- <div ng-click="cameraCtrl.addPhoto()" class="positive ui button">Submit</div> -->
+ 
 
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-<%= form_for [@camera, @sample], html: {multipart: true} do |f| %> 
-   
-    <div>
-        <%= f.label :photo, "Sample Photo", class: "form-label" %> 
-        <%= f.file_field :photo, class: "text-area" %>
-    </div>
-
-
-    <div>
-        <%= f.label :remote_photo_url, "or image URL" %><br />
-        <%= f.text_field :remote_photo_url %>
-    </div>
-
-
-
-    <div>
-        <%= f.submit "Add your photo!", class: "button" %>
-    </div>
-
-
-
-</section>
-
-  <div>
-      <%= f.label :description, "Review", class: "form-label" %> 
-      <%= f.text_area :description, class: "text-area" %>
-  </div>
-
-
-
-
-
-
-
-
-
-
-<% @camera.reviews.each do |review| %>
-    <div>
-         <h3>Review #<%= @camera.reviews.index(review) + 1 %></h3>
-         <p><strong>Rating:</strong> <%= review.rating %></p>
-         <p><strong>The verdict:</strong> <%= review.description%></p>
-         <%= link_to "Delete", camera_review_path(@camera,review), method: :delete, data: {confirm: "Really delete the review?"}%> 
-            <%= link_to "Edit", edit_camera_path(@camera, @review) %>
-     </div>
- <% end %>
-
-<h2>Add a new review!</h2>
-form_for [@camera, @review] do |f| 
-   
-    <div>
-        <%= f.label :description, "Review", class: "form-label" %> 
-        <%= f.text_area :description, class: "text-area" %>
-    </div>
-
-    <div>
-        <%= f.label :rating, class: "form-label" %> 
-        <%= f.number_field :rating, class: "num-input" %>
-    </div>
-
-    <div>
-        <%= f.submit "Add your review!", class: "button" %>
-    </div>
-
-<% end %>
-
- <% @camera.samples.each do |sample| %>
-    <div>
-         <h3>Photo Sample #<%= @camera.samples.index(sample) + 1 %></h3>
-         <p><strong>Photo:</strong> <%= image_tag sample.photo_url(:thumb) %></p>
-     </div>
- <% end %>
-
-
-
-<% end %>

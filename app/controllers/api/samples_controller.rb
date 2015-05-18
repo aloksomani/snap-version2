@@ -10,5 +10,21 @@ module API
 	   
 	  end
 
+	    def destroy
+      @camera = Camera.find(params[:camera_id])
+      @sample = Sample.find(params[:id])
+
+  		
+  		@sample.destroy
+
+      # render json: :no_content
+      head 204
+
+  		end
+
+
+
+
+
 	end
 end
