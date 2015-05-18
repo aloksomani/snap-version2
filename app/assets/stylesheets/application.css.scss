@@ -17,12 +17,18 @@
 
 body {
     background-color: white;
+
+    font-family: 'Raleway', sans-serif;
+
 }
 
  .show-container {
         width: 1200px;
         display: inline-block;
+    font-family: 'Raleway', sans-serif;
+
  }
+
 
  .show-image {
         height: 50%;
@@ -41,3 +47,85 @@ body {
 .icon {
     float: right;
 }
+
+ .review-container {
+        width: 1000px;
+        margin: 100px;
+ }
+
+#login-bar {
+    float: right;
+}
+
+.login-form {
+    color: black;
+}
+
+.ui.button{
+    margin-top: 10px;
+}
+
+.form-wrap {
+    width: 800px;
+    margin-left: 260px;
+    background-color: grey;
+    padding: 40px;
+    border-radius: 40px;
+    opacity: 0.6;
+
+}
+
+.form-wrap-login {
+    width: 600px;
+    margin-left: 360px;
+    background-color: grey;
+    padding: 40px;
+    opacity: 0.4;
+    padding-bottom: 50px;
+
+}
+
+.page-wrapper {
+    background-image: url("http://static1.squarespace.com/static/5316dc15e4b009ca7e4172fb/5320c891e4b0329723cb5fd5/53aca520e4b074ad24290647/1403823395164/Hummingbird+1_Medium.jpg?format=1500w");
+     background-size: 1300px 800px;
+
+}
+
+.page-wrapper-login {
+    background-image: url("https://pcathq-ch3302.files.1drv.com/y2m8Pvwt5y70MJFnSb4Vu2qMithtNNiQyc9ialf6P1pKq_h60XsQPnLwPk_sxDrGmqrHCXQAOX63OWkgnYAQLPUWcGzZYRURo84J2qwdD-6bEHmGBHPxnuZxjS8kIRYf6Ml3JB_Ln-14MiCmDS10QieK7BJQplVzEmlSjvH-0dWRZg/Mammoth5_Medium.jpg?psid=1");
+    background-size: 1300px 1000px;
+
+}
+
+#nav-bar {
+    background-color: grey;
+    color: black;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 3px;
+}
+
+#card {
+    padding: 20px;
+    background-color: grey;
+}
+
+#snap {
+   
+}
+
+.font-wrapper {
+    font-family: 'Raleway', sans-serif;
+    
+}
+
+.form-wrap-text {
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+
+

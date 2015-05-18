@@ -12,6 +12,8 @@ gem 'angularjs-rails'
 
 gem 'angular-rails-templates', '>=0.2.0'
 
+gem 'angularjs-file-upload-rails', '~> 1.1.6'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -35,6 +37,8 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'v1.0beta'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'has_secure_token'
+gem 'responders', '~> 2.0'
 
 gem 'carrierwave'
 

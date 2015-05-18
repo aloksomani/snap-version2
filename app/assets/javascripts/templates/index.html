@@ -90,17 +90,24 @@ $('.ui.dropdown')
 
 
 
+
 <section class="ui stackable page grid">
+
+
   
 <!-- Start of card -->
 
   <div class="four wide column" ng-repeat="camera in cameraCtrl.jsonCameras">
 
-    <div class="ui card" >
+    <div class="ui card" id="card" >
 
                   <a href="#/cameras/{{camera.id}}" class="image">
                           <img src="{{camera.product_photo}}"> 
+
                   </a>
+
+
+              
 
                 <div class="content">
                         <div class="meta">{{camera.brand}}</div>
@@ -120,4 +127,5 @@ $('.ui.dropdown')
   </div> <!-- end of four wide column class -->
 
 </section> <!-- end of ui page grid -->
+
 
