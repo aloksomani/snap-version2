@@ -1,50 +1,108 @@
-  <div ng-controller="AuthenticationController as auth">
+<form ng-submit="cameraCtrl.getCameraIndex()" ng-hide="cameraCtrl.jsonCameras" >
+<div class="ui page grid">
+  <!-- Start profile filter -->
 
-      <!-- begin login form -->
-      <form class="login-form" ng-submit="auth.login()" ng-if="auth.isAuthenticated == false">
-          <input class="login-input" type="text" placeholder="email" ng-model="auth.email">
-          <input class="login-input" type="password" placeholder="password" ng-model="auth.password">
-          <input type="submit" value="Log in" class="btn btn-submit" >
-      </form>
-      <!-- end login form -->
+  <div class="centered row">
+    <div class="right aligned eight wide column">
+      <h2>What type of shooting will you be doing most?</h2>
+    </div>
 
-      <!-- begin logout button -->
-      <div ng-if="auth.isAuthenticated">
-        <button ng-click="auth.logout()">Logout</button>
-      </div>
-      <!-- end logout button -->
+    <div class="left aligned four wide column">
+      <select name="style" class="ui selection fluid dropdown" id="style" ng-model="cameraCtrl.style">
+        <i class="camera icon"></i>
+        <div class="menu">
+          <option value="">Shooting Style...</option>
+          <option value="Landscape">Landscape</option>
+          <option value="Portrait">Portrait</option>
+          <option value="Nighttime">Nighttime</option>
+          <option value="Sports and Family">Sports and Family</option>
+          <option value="Street">Street</option>
+          <option value="Travel">Travel</option>
+        </div>
+      </select>
+    </div>
 
-         <!-- begin logout button -->
-      <div ng-if="auth.isAuthenticated == false">
-        <button><a href="#/signup">Create Account!</a></button>
-      </div>
-      <!-- end logout button -->
-
-      <div> 
-          FANCYYYYY
-
-      </div>
-      
   </div>
 
+  <!-- Start portability filter -->
+
+  <div class="centered row equal">
+    <div class="right aligned eight wide column">
+      <h2>How important is the camera's portability to you?</h2>
+    </div>
+
+    <div class="left aligned four wide column">
+      <select name="portability" class="ui  selection fluid dropdown" id="portability" ng-model="cameraCtrl.portability">
+        <i class="leaf icon"></i>
+        <div class="menu">
+          <option value="">Portability...</option>
+          <option value=1>Not Important</option>
+          <option value=2>Somewhat Important</option>
+          <option value=3>Very Important</option>
+        </div>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- Start price filter -->
+
+  <div class="centered row equal">
+    <div class="right aligned eight wide column">
+      <h2>What's your price range?</h2>
+    </div>
+
+    <div class="left aligned four wide column">
+      <select name="price" class="ui  selection fluid dropdown" id="range" ng-model="cameraCtrl.price">
+        <i class="dollar icon"></i>
+        <div class="menu">
+          <option value="">Price Range...</option>
+          <option value=600 > $0 - 600 </option>
+          <option value=1200 > $600 - 1,200</option>
+          <option value=2100 > $1,200 - 2,100 </option>
+        </div>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- End filters -->
+
+</div> <!-- End page grid for filter form-->
+<br>
+<br>
 <br>
 
+<!-- Form submit button -->
+<div class="ui one column stackable center aligned page grid">
+  <div class="column six wide">
+    <input type="submit" value="Get Cameras" class="positive fluid ui button"></button>
+  </div>
+</div>
 
-<section ng-init="cameraCtrl.getCameraIndex()" class="ui page grid">
+</form> <!-- End of filter form -->
+
+<script>
+$('.ui.dropdown')
+  .dropdown()
+;
+</script>
+
+
+<section class="ui page grid">
   
 <!-- Start of card -->
 
   <div class="four wide column" ng-repeat="camera in cameraCtrl.jsonCameras">
 
-    <div class="ui card" >
+    <div class="ui card" id="card" >
 
                   <div class="image">
                           <img src="{{camera.product_photo}}"> 
                   </div>
-
                 <div class="content">
                         <div class="meta">{{camera.brand}}</div>
-                        </strong><h3><a href="#/cameras/{{camera.id}}">{{camera.id}} {{camera.model}}</a></h3></strong><br>
+                        </strong><h3><a href="#/cameras/{{camera.id}}">{{camera.brand}} {{camera.model}}</a></h3></strong><br>
                         {{camera.description}}
                 </div>
 
@@ -59,3 +117,5 @@
   </div> <!-- end of four wide column class -->
 
 </section> <!-- end of ui page grid -->
+
+

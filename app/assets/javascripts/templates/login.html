@@ -1,0 +1,33 @@
+  <div class="page-wrapper-login">
+
+  <div ng-controller="AuthenticationController as auth">
+
+      <!-- begin login form -->
+      <div class="form-wrap-login">
+            <form class="ui form" ng-submit="auth.login()" ng-if="auth.isAuthenticated == false">
+
+                    <div class="field">
+                      <input class="login-input" type="text" placeholder="email" ng-model="auth.email">
+                    </div>
+
+                    <div class="field">
+                      <input class="login-input" type="password" placeholder="password" ng-model="auth.password">
+                    </div>
+
+                    <div class="field">
+                      <center><input type="submit" value="Log in" class="btn btn-submit" >
+                    </div>
+
+            </form>
+      </div>
+      <!-- end login form -->
+
+      <!-- begin logout button -->
+      <div ng-if="auth.isAuthenticated">
+        <button ng-click="auth.logout()">Logout</button>
+      </div>
+      <!-- end logout button -->
+      
+  </div>
+
+  </div>

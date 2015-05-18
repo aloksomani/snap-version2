@@ -1,5 +1,24 @@
-<div ng-app="snapApp">
+<div ng-app="snapApp" ng-controller="CamerasController as cameraCtrl">
+  <!-- Start of navigation Menu -->
+    <div class="ui inverted menu" id="nav-bar">
+    <center>
+      <a class="item" href="#/filter" id="snap">SNAP</a>
+      <a class="item" href="" ng-click="cameraCtrl.getAllCameras()">CAMERAS</a>
+      <a class="item" href="#/login" id="snap">LOGIN</a>
+      <a class="item" href="#/signup" id="snap">CREATE ACCOUNT</a>
+
+
+  </div>
+    <!-- End of Navigation Menu -->
+
+
+  <script>
+    $(function() {
+      $('.dropdown').dropdown({transition: 'drop'});
+    });
+  </script>
+
   <div class="view-container">
-    <div ng-view>{{2+2}}</div>
+    <div ng-view></div>
   </div>
 </div>

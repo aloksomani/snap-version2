@@ -4,14 +4,20 @@ angular.module('snapApp')
 function config($routeProvider){
     $routeProvider
         .when('/', {
+            templateUrl: "index.html"
+        })
+        .when('/filter', {
             templateUrl: "index.html",
             controller: "CamerasController",
             controllerAs: "cameraCtrl"
         })
         .when('/cameras/:id', {
-            templateUrl: "show.html",
-            controller: "CamerasController",
-            controllerAs: "cameraCtrl"
+            templateUrl: "show.html"
+        })
+        .when('/login', {
+            templateUrl: "login.html",
+            controller: "UsersController",
+            controllerAs: "userCtrl"
         })
         .when('/signup', {
             templateUrl: "signup.html",
